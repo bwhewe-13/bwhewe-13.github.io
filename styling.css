@@ -1,17 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-*{
-    /* list-style: none; */
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
 }
 
-body{
-    background: #f5f6fa;
+body {
+    background: rgb(255, 255, 255);
 }
+
+.nav {
+  background: rgb(5, 68, 104);
+}
+
+.content {
+  background: rgb(255, 255, 255);
+}
+
+.side-secondary {
+  background-color: rgb(5, 68, 104);
+}
+
+.footer {
+  background: rgb(15, 127, 191);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .nav {
+    width: 100%;
+  }
+ 
+  .side-primary {
+    flex: 1;
+    /* width: 100%; */
+  }
+ 
+  .content {
+    flex: 3;
+  }
+ 
+  .side-secondary {
+    display: none;
+  }
+ 
+  .footer {
+    width: 100%;
+  }
+}
+
+.element {
+  /* If one unitless value is given: flex-grow, flex-basis: 0; */
+  flex: 3;
+ 
+  /* If one value is given with unit: flex-basis */
+  flex: 10em;
+ 
+  /* Two values, unitless: flex-grow | flex-shrink */
+  flex: 3 3;
+ 
+  /* Two values, with unit: flex-grow | flex-basis */
+  flex: 3 100px;
+ 
+  /* Three values: flex-grow | flex-shrink | flex-basis */
+  flex: 2 2 10%;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav {
+    width: 100%;
+  }
+ 
+  .side-primary {
+    flex: 1;
+  }
+ 
+  .content {
+    flex: 3;
+  }
+ 
+  .side-secondary {
+    display: block;
+    flex: 1;
+  }
+ 
+  .footer {
+    width: 100%;
+  }
+}
+
 
 .contacts {
     color: rgb(255, 255, 255);
@@ -28,10 +117,9 @@ body{
 
 .wrapper .sidebar{
     background: rgb(5, 68, 104);
-    position: fixed;
     top: 0;
     left: 0;
-    width: 225px;
+    min-width: 200px;
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
@@ -94,7 +182,6 @@ body{
     display: block;
 }
 
-
 .summary {
     background: rgb(230, 230, 230);
     padding: 25px;
@@ -111,24 +198,11 @@ body{
     border-left: 4px solid #2a5298;
 }
 
-.right-sidebar{
-    background: rgb(5, 68, 104);
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 225px;
-    height: 100%;
-    padding: 20px 0;
-    transition: all 0.5s ease;
-}
-
 .content {
     float:left;
     /* width:100%; */
     /* padding: -20px; */
     /* width:300px; */
-    margin-left:230px;
-    margin-right:230px;
 }
 
 .content h2 {
@@ -150,7 +224,6 @@ body{
 
 /* Work Experience Styles */
 .work-container {
-    /* margin-bottom: 15px; */
     padding: 10px;
 }
 
@@ -184,7 +257,6 @@ body{
 }
 
 
-
 .current-tag {
     display: inline-block;
     padding: 4px 12px;
@@ -195,6 +267,7 @@ body{
     font-weight: normal;
 }
 
+/* Skills for Resume */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
