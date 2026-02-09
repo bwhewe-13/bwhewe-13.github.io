@@ -212,12 +212,43 @@ body {
 }
 
 .content h2 {
-    font-size: 30px;
-    font-weight: bold;
-    margin: 5px;
-    background-color: rgb(228, 228, 228);
-    border-radius: 10px;
-    padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.section-header {
+  background-color: rgb(228, 228, 228);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.section-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    user-select: none;
+}
+.section-header:hover {
+    opacity: 0.8;
+}
+.dropdown-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+}
+.dropdown-icon.rotate {
+    transform: rotate(180deg);
+}
+.section-content {
+    max-height: 5000px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.section-content.collapsed {
+    max-height: 0;
 }
 
 .content .work-container hr {
