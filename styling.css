@@ -318,6 +318,40 @@ body {
     margin-bottom: 8px;
 }
 
+/* Home intro gallery */
+.intro-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.intro-figure {
+  flex: 1;
+  margin: 0;
+}
+
+.intro-figure img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  background: rgb(248, 249, 250);
+  border-radius: 8px;
+  border: 1px solid rgba(5, 68, 104, 0.2);
+}
+
+.intro-figure figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgb(102, 102, 102);
+}
+
+@media screen and (min-width: 768px) {
+  .intro-gallery {
+    flex-direction: row;
+  }
+}
+
 /* Research Publications */
 .publication-filters {
   display: flex;
