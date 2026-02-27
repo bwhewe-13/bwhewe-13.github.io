@@ -516,11 +516,24 @@ body {
 
 .project-stats {
     display: flex;
+  align-items: center;
     gap: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 15px;
     color: rgb(102, 102, 102);
+}
+
+.project-language-logo {
+  height: 22px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.project-stat i {
+  font-size: 18px;
+  vertical-align: middle;
 }
 
 /* GitHub Activity */
