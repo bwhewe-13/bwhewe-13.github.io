@@ -326,14 +326,19 @@ body {
   margin-top: 12px;
 }
 
+.intro-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .intro-figure {
-  flex: 1;
   margin: 0;
 }
 
 .intro-figure img {
   width: 100%;
-  height: 260px;
+  height: 340px;
   object-fit: contain;
   background: rgb(248, 249, 250);
   border-radius: 8px;
@@ -346,9 +351,63 @@ body {
   color: rgb(102, 102, 102);
 }
 
+.intro-download-button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(5, 68, 104, 0.3);
+  background: rgb(5, 68, 104);
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.intro-download-button:hover {
+  opacity: 0.9;
+}
+
+.intro-download-button[aria-disabled="true"] {
+  background: rgb(248, 249, 250);
+  color: rgb(102, 102, 102);
+  border-color: rgba(5, 68, 104, 0.2);
+  cursor: default;
+  pointer-events: none;
+}
+
 @media screen and (min-width: 768px) {
   .intro-gallery {
     flex-direction: row;
+    align-items: stretch;
+  }
+
+  .intro-column {
+    flex: 1;
+  }
+
+  .intro-column-research {
+    flex: 1;
+    gap: 10px;
+  }
+
+  .intro-column-sorting {
+    flex: 1;
+  }
+
+  .intro-column-sorting .intro-figure {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .intro-column-sorting .intro-figure img {
+    flex: 1;
+    height: auto;
+    min-height: 0;
+  }
+
+  .intro-figure img {
+    height: 380px;
   }
 }
 
