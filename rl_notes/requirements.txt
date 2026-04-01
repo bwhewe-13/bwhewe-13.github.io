@@ -1,33 +1,52 @@
-# RL with Python — pip requirements
+# Generated from environment.yml for pip-based installs.
 # Usage: pip install -r requirements.txt
 #
-# NOTE: PyTorch is listed here as the CPU build.
-# For GPU support, install manually first:
+# This file covers pip-installable packages only. System dependencies such as
+# swig are not handled here; see Dockerfile for the containerised setup.
+#
+# CPU PyTorch is the default. For GPU support, install the matching CUDA wheels
+# first, then install the rest of this file:
 #   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-# then run: pip install -r requirements.txt
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Python and notebook tooling
+notebook
+ipywidgets
 
 # Core deep learning
-torch>=2.3.0
+torch>=2.3
 torchvision
 torchaudio
+pytorch-ignite
+torchrl
+ptan
 
-# RL environments
-gymnasium>=1.0.0
-ale-py>=0.10.0
-pygame>=2.6.0
-pettingzoo>=1.25.0
+# General scientific stack
+numpy
+matplotlib
+pandas
+scipy
 
-# RL frameworks
-stable-baselines3>=2.7.0
-sb3-contrib>=2.7.0
-ray[rllib]>=2.54.0
-mlflow>=2.14.0
+# Image and video
+opencv-python
+pillow
+moviepy
 
-# Wrappers & compatibility
-supersuit>=3.9.0
-shimmy>=1.3.0
+# RL environments and frameworks
+gymnasium[mujoco,box2d]>=1.0.0
+minigrid
+ale-py
+pygame-ce
+pettingzoo
+stable-baselines3
+sb3-contrib
+ray[rllib,tune]>=2.54.0
+mlflow
+supersuit
+shimmy
+tensorboard
 
-# Utilities
-numpy>=1.26.0
-matplotlib>=3.9.0
-tensorboard>=2.17.0
+# Testing and type checking
+pytest
+mypy
