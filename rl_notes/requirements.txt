@@ -37,7 +37,7 @@ moviepy
 gymnasium[mujoco,box2d]>=1.0.0
 minigrid
 ale-py
-pygame-ce
+pygame
 pettingzoo
 stable-baselines3
 sb3-contrib

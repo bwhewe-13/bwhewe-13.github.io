@@ -72,7 +72,7 @@ dependencies:
     - pettingzoo
     - sb3-contrib
     - "ray[rllib]>=2.54.0"
-    - pygame-ce                 # imports as `pygame`
+    - pygame
     - mlflow
     - supersuit
     - shimmy
