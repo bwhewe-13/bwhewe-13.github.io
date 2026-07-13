@@ -193,7 +193,7 @@ frame_one = frames[0]
 frame_one.save(
     path + "sorting.gif",
     format="GIF",
-    append_images=frames,
+    append_images=frames[1:],
     save_all=True,
     duration=200,
     loop=0,
