@@ -240,25 +240,19 @@ li {
   border-radius: 10px;
   padding: 12px;
   margin: 8px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.section-header {
+.section-header.collapsible {
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  padding: 12px 12px;
     user-select: none;
 }
-.section-header:hover {
+.section-header.collapsible:hover {
     opacity: 0.8;
 }
 .dropdown-icon {
-    transition: transform 0.3s ease;
     font-size: 0.8em;
-}
-.dropdown-icon.rotate {
-    transform: rotate(180deg);
 }
 .section-content {
     max-height: 5000px;
