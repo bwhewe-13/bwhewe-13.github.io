@@ -78,23 +78,6 @@ li {
   }
 }
 
-.element {
-  /* If one unitless value is given: flex-grow, flex-basis: 0; */
-  flex: 3;
- 
-  /* If one value is given with unit: flex-basis */
-  flex: 10em;
- 
-  /* Two values, unitless: flex-grow | flex-shrink */
-  flex: 3 3;
- 
-  /* Two values, with unit: flex-grow | flex-basis */
-  flex: 3 100px;
- 
-  /* Three values: flex-grow | flex-shrink | flex-basis */
-  flex: 2 2 10%;
-}
-
 @media screen and (min-width: 1024px) {
   .nav {
     width: 100%;
