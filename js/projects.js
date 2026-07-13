@@ -370,9 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cached && cached.timestamp && cached.data) {
       const ageMs = Date.now() - cached.timestamp;
       setLastUpdated(cached.timestamp, ageMs >= cacheTtlMs);
-      if (ageMs < cacheTtlMs) {
-        applyCachedData(cached.data);
-      }
+      applyCachedData(cached.data);
     }
 
     const shouldFetchRepos = !cached || !cached.timestamp || Date.now() - cached.timestamp >= cacheTtlMs;
@@ -391,7 +389,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(() => ({ repo, data: null }))
         )
       ).then((results) => {
-        const dataMap = {};
+        const previousData = cached && cached.data ? cached.data : {};
+        const dataMap = Object.assign({}, previousData);
         let hasData = false;
 
         results.forEach(({ repo, data }) => {
@@ -399,28 +398,26 @@ document.addEventListener('DOMContentLoaded', () => {
             hasData = true;
             dataMap[repo] = data;
           }
-
-          projectCards.forEach((card) => {
-            if (card.getAttribute('data-repo') !== repo) {
-              return;
-            }
-
-            if (data) {
-              updateCard(card, data);
-            } else {
-              updateCardError(card);
-            }
-          });
         });
 
-        writeCache({
-          timestamp: Date.now(),
-          data: dataMap
+        projectCards.forEach((card) => {
+          const repo = card.getAttribute('data-repo');
+          if (repo && dataMap[repo]) {
+            updateCard(card, dataMap[repo]);
+          } else {
+            updateCardError(card);
+          }
         });
 
         if (hasData) {
+          writeCache({
+            timestamp: Date.now(),
+            data: dataMap
+          });
           setLastUpdated(Date.now(), false);
-        } else if (!cached || !cached.timestamp) {
+        } else if (cached && cached.timestamp) {
+          setLastUpdated(cached.timestamp, false);
+        } else {
           setLastUpdated(null, false);
         }
       });
@@ -458,7 +455,9 @@ document.addEventListener('DOMContentLoaded', () => {
           setActivityUpdated(Date.now(), false);
         })
         .catch(() => {
-          if (!cachedActivity || !cachedActivity.timestamp) {
+          if (cachedActivity && cachedActivity.timestamp) {
+            setActivityUpdated(cachedActivity.timestamp, false);
+          } else {
             renderActivity([]);
             setActivityUpdated(null, false);
           }
