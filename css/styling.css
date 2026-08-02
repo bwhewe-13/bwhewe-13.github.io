@@ -494,6 +494,13 @@ li {
   display: none;
 }
 
+.publication-method {
+  font-size: 15px;
+  font-style: italic;
+  color: rgb(102, 102, 102);
+  margin: -4px 0 12px;
+}
+
 /* Skills for Resume */
 .skills-grid {
     display: grid;
