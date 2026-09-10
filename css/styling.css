@@ -501,6 +501,111 @@ li {
   margin: -4px 0 12px;
 }
 
+/* Publication Citations */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.publication-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: -10px 10px 20px;
+}
+
+.publication-actions,
+.cite-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.cite-panel-actions {
+  margin-top: 12px;
+}
+
+/* Mirrors .filter-button visually, but stays a separate rule set so the
+   filter script's selector can never match these buttons. */
+.cite-toggle,
+.cite-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(5, 68, 104, 0.3);
+  background: rgb(248, 249, 250);
+  color: rgb(5, 68, 104);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.cite-toggle:hover,
+.cite-copy:hover {
+  transform: translateY(-1px);
+}
+
+.cite-toggle:focus-visible,
+.cite-copy:focus-visible {
+  outline: 2px solid rgb(0, 0, 250);
+  outline-offset: 2px;
+}
+
+.cite-toggle[aria-expanded="true"] {
+  background: rgb(5, 68, 104);
+  color: rgb(255, 255, 255);
+}
+
+.cite-caret {
+  font-size: 0.8em;
+}
+
+.cite-panel {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(5, 68, 104, 0.2);
+  border-radius: 8px;
+  background: rgb(248, 249, 250);
+}
+
+.cite-panel.is-hidden {
+  display: none;
+}
+
+.cite-bibtex {
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(33, 37, 41);
+  /* Required: the global `*` rule forces Open Sans onto <pre> otherwise. */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.cite-status {
+  font-size: 14px;
+  color: rgb(102, 102, 102);
+  min-height: 1.4em;
+}
+
+.cite-status.is-error {
+  color: rgb(178, 70, 119);
+}
+
 /* Skills for Resume */
 .skills-grid {
     display: grid;
@@ -820,6 +925,10 @@ li {
     padding: 10px 8px 22px;
   }
 
+  .cite-bibtex {
+    font-size: 13px;
+  }
+
   .content section {
     margin-bottom: 20px;
   }
@@ -927,6 +1036,12 @@ li {
   .filter-button {
     font-size: 14px;
     padding: 8px 12px;
+  }
+
+  .cite-toggle,
+  .cite-copy {
+    font-size: 14px;
+    padding: 6px 12px;
   }
 }
 
