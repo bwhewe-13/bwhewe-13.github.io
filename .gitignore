@@ -22,3 +22,12 @@ __pycache__/
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
+
+# LaTeX build artifacts (the built CV PDF itself is tracked)
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+cv/*.log
