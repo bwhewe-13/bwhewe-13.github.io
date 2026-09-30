@@ -1,0 +1,210 @@
+% ============================================================================
+% Public CV -- AI engineering (industry)
+%
+% This is the PUBLIC version of the CV that is downloadable from
+% ben-whewell.com/resume.html. It deliberately contains NO phone number and NO
+% email address; readers are pointed to the request link on the website
+% instead. Do not add direct contact details to this file.
+%
+% Build (TinyTeX / TeX Live):
+%   pdflatex -interaction=nonstopmode -jobname=Ben_Whewell_CV cv_ai_engineering.tex
+% ============================================================================
+\documentclass[10.5pt,letterpaper]{article}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.62in,bottom=0.55in,top=0.55in]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{RGB}{5,68,104}
+\definecolor{muted}{RGB}{95,95,95}
+
+\hypersetup{colorlinks=true,urlcolor=accent,pdftitle={Benjamin Whewell -- CV},
+  pdfauthor={Benjamin Whewell},pdfsubject={AI/ML engineering CV}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% --- section headings -------------------------------------------------------
+\titleformat{\section}{\normalfont\large\bfseries\color{accent}}{}{0pt}{\MakeUppercase}[{\vspace{2pt}\hrule height 0.6pt}]
+\titlespacing{\section}{0pt}{7pt}{4pt}
+
+% --- helpers ---------------------------------------------------------------
+% \role{title}{dates}{organization}{location}
+\newcommand{\role}[4]{%
+  \vspace{3pt}%
+  \noindent\textbf{#1}\hfill\textcolor{muted}{#2}\par
+  \noindent\textit{#3}\hfill\textcolor{muted}{\textit{#4}}\par
+  \vspace{1pt}%
+}
+% \degree{degree}{field}{institution}{date}
+\newcommand{\degree}[4]{%
+  \noindent\textbf{#1}, #2\hfill\textcolor{muted}{#4}\par
+  \noindent\textit{#3}\par\vspace{2pt}%
+}
+\newcommand{\skillrow}[2]{\noindent\textbf{#1:} #2\par\vspace{1.5pt}}
+% \project{name}{description}{url}{short link label}
+\newcommand{\project}[4]{\noindent\textbf{#1} --- #2 \href{#3}{\small\texttt{#4}}\par\vspace{1.5pt}}
+
+\newlist{tight}{itemize}{1}
+\setlist[tight]{leftmargin=13pt,topsep=1pt,itemsep=1pt,parsep=0pt,label=\textcolor{accent}{\small$\bullet$}}
+
+\begin{document}
+
+% ============================== HEADER ====================================
+\begin{center}
+  {\LARGE\bfseries Benjamin (Ben) Whewell}\\[3pt]
+  {\color{accent}\bfseries AI/ML Scientist \textperiodcentered{} Machine Learning Engineering}\\[4pt]
+  {\small Santa Fe, NM, USA \textperiodcentered{}
+   \href{https://www.ben-whewell.com}{ben-whewell.com} \textperiodcentered{}
+   \href{https://github.com/bwhewe-13}{github.com/bwhewe-13} \textperiodcentered{}
+   \href{https://www.linkedin.com/in/ben-whewell-133935137/}{LinkedIn} \textperiodcentered{}
+   \href{https://scholar.google.com/citations?user=e4PPMC0AAAAJ}{Google Scholar} \textperiodcentered{}
+   \href{https://orcid.org/0000-0001-7826-5525}{ORCiD}}\\[3pt]
+  {\footnotesize\itshape\color{muted} Public version --- phone number and email address withheld.
+   Request the complete CV at \href{https://www.ben-whewell.com/resume.html}{ben-whewell.com/resume.html}.}
+\end{center}
+
+% ============================== SUMMARY ===================================
+\section{Summary}
+AI/ML scientist and engineer with a PhD in computational engineering and eight years of
+research and production experience building machine learning systems for large-scale
+scientific computing. Owns the full lifecycle: data ingestion and feature engineering
+through training, evaluation, deployment into production codebases, and performance
+monitoring with hands-on user adoption. Current work spans LLM and retrieval-augmented
+generation (RAG) systems, reinforcement learning for sequential decision-making, and neural
+surrogates that cut compute cost within a prescribed error tolerance. Strong Python and C++
+engineering on Linux, GPU, and HPC infrastructure.
+
+% ============================ SKILLS ======================================
+\section{Technical Skills}
+\skillrow{Languages}{Python, C++, SQL, R, Cython, Bash}
+\skillrow{ML \& Deep Learning}{PyTorch, TensorFlow, Keras, Scikit-Learn, XGBoost, Optuna, OpenCV; neural
+  operators (DeepONet), autoencoders, surrogate modeling, hyperparameter optimization}
+\skillrow{LLMs \& NLP}{Hugging Face Transformers, LangChain, LangGraph, LlamaIndex, RAG pipelines,
+  vector databases, embeddings, Ollama (local inference), Pydantic, prompt design and evaluation}
+\skillrow{Reinforcement Learning}{Gymnasium, Stable-Baselines3, Ray RLlib, PettingZoo, multi-agent RL,
+  custom environment design, reward shaping}
+\skillrow{MLOps \& Deployment}{Docker, Kubernetes, MLflow, Weights \& Biases, TensorBoard, DVC, CI/CD,
+  model monitoring, feature stores, FastAPI, Flask, Django}
+\skillrow{Data \& Infrastructure}{NumPy, Pandas, PySpark, Hadoop, PostgreSQL, MySQL, SQLite, MongoDB,
+  Snowflake, ETL; AWS, Azure, Git/GitHub, Linux/Unix, HPC and GPU clusters}
+
+% ========================== EXPERIENCE ====================================
+\section{Experience}
+
+\role{AI/ML Scientist}{May 2026 -- Present}{Los Alamos National Laboratory}{Los Alamos, NM}
+\begin{tight}
+  \item Build and validate end-to-end ML pipelines --- ingestion, preprocessing, feature
+    engineering, training, evaluation --- for large-scale multiphysics simulation workloads.
+  \item Deploy models into production HPC software with performance monitoring, and drive
+    adoption through direct support of scientific end users.
+  \item Develop LLM- and RAG-based assistants over domain-specific technical corpora, covering
+    retrieval, grounding, and response evaluation.
+  \item Combine HPC and AI to accelerate computational science workflows and shorten the
+    cycle from experiment to result.
+\end{tight}
+
+\role{Metropolis Postdoctoral Fellow}{February 2025 -- May 2026}{Los Alamos National Laboratory}{Los Alamos, NM}
+\begin{tight}
+  \item Trained reinforcement learning agents for sequential decision-making that reduces error
+    in numerical simulations, including custom environment design and reward engineering.
+  \item Applied ML-driven optimization to energy-group structures for nuclear data, shrinking
+    data volume while holding simulation accuracy within tolerance.
+  \item Prototyped LLM and RAG applications for technical document search and simulation
+    workflows, and evaluated local versus hosted inference trade-offs.
+  \item Awarded the competitive Nicholas C. Metropolis Postdoctoral Fellowship; conference paper
+    award winner at the 2025 ANS Mathematics and Computational Methods conference.
+\end{tight}
+
+\role{Graduate Student Researcher}{September 2018 -- January 2025}{University of Notre Dame}{Notre Dame, IN}
+\begin{tight}
+  \item Designed and shipped an ML pipeline that replaces expensive linear-algebra kernels with
+    learned surrogates (autoencoders, deep networks, deep operator networks), achieving data
+    reduction in production simulations within a prescribed error tolerance.
+  \item Built open-source scientific Python, Cython, and C++ libraries with published API
+    documentation and regression tests, used by other researchers.
+  \item Developed single-grid error estimation methodology for model-risk evaluation of
+    high-dimensional solvers; published in a peer-reviewed verification and UQ journal.
+\end{tight}
+
+\role{Graduate Student Assistant}{June 2021 -- August 2021}{Lawrence Livermore National Laboratory}{Livermore, CA}
+\begin{tight}
+  \item Integrated parallel C++ production physics codes across Livermore's HPC systems.
+  \item Coordinated across multiple developer teams and downstream users to reconcile
+    code-base and user requirements.
+\end{tight}
+
+\role{Graduate Student Assistant}{May 2019 -- July 2019}{Los Alamos National Laboratory}{Los Alamos, NM}
+\begin{tight}
+  \item Built ML models to quantify experimental error and detect outliers in nuclear
+    cross-section data using measurement features and covariances; results published in
+    \textit{Nuclear Instruments and Methods in Physics Research A}.
+\end{tight}
+
+\role{Boilers and Turbines Operator}{June 2015 -- June 2018}{NRG Energy Power Station}{Middletown, CT}
+\begin{tight}
+  \item Operated and maintained safety-critical power-plant systems under strict procedures,
+    with shift-handoff communication to supervision and plant personnel.
+\end{tight}
+
+% =========================== PROJECTS =====================================
+\section{Selected Open-Source Projects}
+\project{MyPDFLibrary}{RAG command-line assistant over PDF corpora: local LLM inference with Ollama,
+  embedding-based vector retrieval, and grounded question answering.}{https://github.com/bwhewe-13/MyPDFLibrary}{bwhewe-13/MyPDFLibrary}
+\project{WOLF}{Debugging and reliability contributor to Los Alamos National Laboratory's open-source
+  agent framework (Python, FastAPI, Chroma): async coroutine leak, BM25 empty-corpus crash, PyMuPDF
+  deprecation cleanup, and a missing knowledge-base PDF ingestion endpoint, root-caused and
+  patched.}{https://github.com/lanl/wolf}{lanl/wolf}
+\project{rl-lab}{Reinforcement learning library and tutorial series spanning tabular, deep,
+  multi-agent, and distributed RL with PyTorch, Gymnasium, Stable-Baselines3, and Ray RLlib.}{https://github.com/bwhewe-13/rl-lab}{bwhewe-13/rl-lab}
+\project{ants / discrete1}{Documented Python, Cython, and C++ simulation libraries with hooks for
+  ML surrogate models and published API docs.}{https://github.com/bwhewe-13/ants}{bwhewe-13/ants}
+
+% =========================== EDUCATION ====================================
+\section{Education}
+\degree{Doctor of Philosophy}{Mechanical and Aerospace Engineering}{University of Notre Dame}{January 2025}
+\degree{Master of Science}{Mechanical and Aerospace Engineering}{University of Notre Dame}{May 2022}
+\degree{Bachelor of Science}{Nuclear Engineering}{Thomas Edison State University}{December 2017}
+
+% ========================= PUBLICATIONS ===================================
+\section{Selected AI/ML Publications}
+\begin{tight}
+  \item \textbf{B. Whewell}, R. G. McClarren, N. Gibson, and A. Khatiwada (2026). Application of Deep
+    Operator Networks for Data Reduction in Deterministic Neutron Calculations. \textit{Under review.}
+  \item \textbf{B. Whewell}, N. Gibson, and A. Khatiwada (2026). Application of Reinforcement Learning for
+    Multigroup Energy Grid Optimization for Neutron Transport Criticality Problems. \textit{Under review.}
+  \item \textbf{B. Whewell} and R. G. McClarren (2022). Data Reduction in Deterministic Neutron Transport
+    Calculations Using Machine Learning. \textit{Annals of Nuclear Energy}, 176, 109276.
+    \href{https://doi.org/10.1016/j.anucene.2022.109276}{doi:10.1016/j.anucene.2022.109276}
+  \item \textbf{B. Whewell}, M. Grosskopf, and D. Neudecker (2020). Evaluating $^{239}$Pu(n,f) cross sections
+    via machine learning using experimental data, covariances, and measurement features.
+    \textit{Nuclear Instruments and Methods in Physics Research A}, 978, 164305.
+    \href{https://doi.org/10.1016/j.nima.2020.164305}{doi:10.1016/j.nima.2020.164305}
+  \item \textbf{B. Whewell} and R. G. McClarren (2025). Single Grid Error Estimation for Neutron Transport
+    Solvers. \textit{Journal of Verification, Validation and Uncertainty Quantification}, 10(2), 021001.
+    \href{https://doi.org/10.1115/1.4069426}{doi:10.1115/1.4069426}
+\end{tight}
+\vspace{2pt}
+{\small Full record --- 6 journal articles, 6 conference papers, 5 presentations, 2 technical reports:
+\href{https://www.ben-whewell.com/research.html}{ben-whewell.com/research.html}.}
+
+% ======================= AWARDS AND SERVICE ===============================
+\section{Awards \& Professional Service}
+\begin{tight}
+  \item Nicholas C. Metropolis Postdoctoral Fellowship, Los Alamos National Laboratory.
+  \item Conference Paper Award, 2025 ANS Mathematics and Computational Methods conference.
+  \item Session Chair, Machine Learning and Artificial Intelligence I \& IV, 2025 International
+    Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering.
+  \item Reviewer, \textit{Annals of Nuclear Energy} and ANS Mathematics and Computation Division
+    (2025--present).
+  \item Volunteer judge, Los Alamos National Laboratory 2025 Annual Student Symposium.
+\end{tight}
+
+\end{document}
