@@ -269,8 +269,21 @@ li {
   text-decoration: underline;
 }
 
-.resume-download {
-  margin: 0 10px 22px;
+.resume-request p {
+  margin: 0;
+}
+
+.resume-request .resume-request-note {
+  margin-top: 12px;
+}
+
+.resume-request .download-button {
+  margin-top: 0;
+  color: rgb(255, 255, 255);
+}
+
+.resume-request .download-button:hover {
+  text-decoration: none;
 }
 
 .content .work-container hr {
@@ -349,7 +362,8 @@ li {
   color: rgb(102, 102, 102);
 }
 
-.intro-download-button {
+.intro-download-button,
+.download-button {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 14px;
@@ -361,7 +375,8 @@ li {
   font-weight: 600;
 }
 
-.intro-download-button:hover {
+.intro-download-button:hover,
+.download-button:hover {
   opacity: 0.9;
 }
 
