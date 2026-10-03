@@ -1,67 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+title: RL Notes
+description: Notes on reinforcement learning, environment setup, and reproducible experiments by Ben Whewell.
+---
+<h1>Reinforcement learning notes</h1>
+<p>
+  Tutorial notebooks from <a href="https://github.com/bwhewe-13/rl-lab">rl-lab</a>, my
+  reinforcement learning library. Each one can be read here or downloaded and run locally.
+</p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Notes and posts on reinforcement learning, environment setup, and reproducible experiments by Ben Whewell.">
-
-    <link rel="canonical" href="https://www.ben-whewell.com/rl_notes.html">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Ben Whewell">
-    <meta property="og:title" content="Reinforcement Learning Notes | Ben Whewell">
-    <meta property="og:description" content="Notes and posts on reinforcement learning, environment setup, and reproducible experiments by Ben Whewell.">
-    <meta property="og:url" content="https://www.ben-whewell.com/rl_notes.html">
-    <meta property="og:image" content="https://www.ben-whewell.com/figures/og-card.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Ben Whewell, AI/ML Scientist — neutron transport, nuclear data, and machine learning at Los Alamos National Laboratory">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
-    <link rel="stylesheet" href="css/styling.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
-    <link rel="icon" type="image/svg+xml" href="figures/favicon.svg">
-    <title>Whewell | RL Notes</title>
-</head>
-
-<body>
-  <div class="container">
-    <div id="sidebar-placeholder" class="side-primary"></div>
-    <div class="content">
-      <section id="rl-notes" class="rl-notes-page">
-        <div class="section-header">
-          <h2>Reinforcement Learning Notes</h2>
-        </div>
-        <div class="work-container rl-notes-intro">
-          <p class="rl-notes-description">Posts and notes on reinforcement learning, setup workflows, and reproducible experiments.</p>
-          <article class="rl-note-card">
-            <h3 class="rl-note-title"><a href="rl_notes/00_getting_started.html">00 - Getting Started</a></h3>
-            <p class="rl-note-summary">
-              A quick setup guide for starting RL experiments, including reproducible
-              environment configuration and baseline project dependencies.
-            </p>
-            <ul class="rl-note-tags" aria-label="Post tags">
-              <li>Environment Setup</li>
-              <li>Notebook</li>
-            </ul>
-            <p class="rl-note-download-title"><strong>Downloads:</strong></p>
-            <ul class="rl-note-downloads">
-              <li><a href="rl_notes/00_getting_started.ipynb" download>00_getting_started.ipynb</a></li>
-              <li><a href="rl_notes/environment.yml" download>environment.yml</a></li>
-              <li><a href="rl_notes/requirements.txt" download>requirements.txt</a></li>
-              <li><a href="rl_notes/Dockerfile" download>Dockerfile</a></li>
-            </ul>
-          </article>
-        </div>
-      </section>
-    </div>
-    <div class="side-secondary"></div>
-    <div class="footer"></div>
-  </div>
-    <script src="js/sidebar-loader.js"></script>
-</body>
-
-</html>
+<ul class="note-list">
+  <li class="note">
+    <h2><a href="/rl_notes/00_getting_started.html">00: Getting started</a></h2>
+    <p>
+      Setting up a reproducible environment with Conda, pip, or Docker, checking that
+      Gymnasium and the Atari environments work, and a short tour of the Gymnasium API
+      using FrozenLake.
+    </p>
+    <p class="note-downloads">
+      Download:
+      <a href="/rl_notes/00_getting_started.ipynb" download>notebook</a>,
+      <a href="/rl_notes/environment.yml" download>environment.yml</a>,
+      <a href="/rl_notes/requirements.txt" download>requirements.txt</a>,
+      <a href="/rl_notes/Dockerfile" download>Dockerfile</a>
+    </p>
+  </li>
+</ul>
