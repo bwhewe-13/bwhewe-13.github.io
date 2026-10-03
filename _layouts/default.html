@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% include head.html %}
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    {% include sidebar.html %}
+    <div class="main-column">
+      <main id="main" class="content{% if page.content_class %} {{ page.content_class }}{% endif %}">
+{{ content }}
+      </main>
+      {% include footer.html %}
+    </div>
+  </div>
+  {%- for script in page.scripts %}
+  <script src="{{ script }}"></script>
+  {%- endfor %}
+</body>
+
+</html>

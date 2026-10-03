@@ -1,0 +1,33 @@
+title: Ben Whewell
+role: AI/ML Scientist
+location: Santa Fe, NM
+email: ben.whewell@pm.me
+description: >-
+  Ben Whewell is an AI/ML scientist at Los Alamos National Laboratory working on
+  neutron transport, nuclear data, and machine learning.
+url: https://www.ben-whewell.com
+
+links:
+  github: https://github.com/bwhewe-13
+  linkedin: https://www.linkedin.com/in/ben-whewell-133935137/
+  scholar: https://scholar.google.com/citations?user=e4PPMC0AAAAJ
+  orcid: https://orcid.org/0000-0001-7826-5525
+  researchgate: https://www.researchgate.net/profile/Ben-Whewell
+
+plugins:
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - cv/README.md
+  - cv/*.tex
+  - rl_notes/README.md
+  - bin/

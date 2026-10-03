@@ -1,0 +1,11 @@
+{%- comment -%}
+  Short reference list for the research overview pages.
+  Usage: {% include pub-list.html keys="key1 key2" %}
+{%- endcomment -%}
+{%- assign keys = include.keys | split: " " -%}
+<ul class="ref-list">
+  {%- for key in keys %}
+  {%- assign pub = site.data.publications | where: "key", key | first %}
+  <li><strong>{{ pub.title }}.</strong> {{ pub.citation }}</li>
+  {%- endfor %}
+</ul>

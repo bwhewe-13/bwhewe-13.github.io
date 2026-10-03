@@ -1,0 +1,37 @@
+{%- comment -%}
+  One entry from _data/publications.yml, with a Cite button and BibTeX panel.
+  Pages that use it need js/research.js.
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- capture type_label -%}
+  {%- case pub.type -%}
+    {%- when "journal" -%}{% if pub.preprint %}Preprint{% else %}Journal{% endif %}
+    {%- when "conference" -%}Conference paper
+    {%- when "presentation" -%}Presentation
+    {%- when "report" -%}Report
+  {%- endcase -%}
+{%- endcapture -%}
+<article class="publication-item" data-category="{{ pub.type }}">
+  <h4 class="pub-title">{{ pub.title }}</h4>
+  <p class="pub-citation">{{ pub.citation }}</p>
+  {%- if pub.summary %}
+  <p class="pub-summary">{{ pub.summary }}</p>
+  {%- endif %}
+  <div class="pub-actions">
+    <span class="pub-type pub-type-{{ pub.type }}">{{ type_label }}</span>
+    <button class="cite-toggle" type="button" aria-expanded="false" aria-controls="bib-{{ pub.key }}">
+      {% include icons/quote-right.svg %}Cite<span class="visually-hidden"> {{ pub.title }}</span>
+      <span class="cite-caret">{% include icons/caret-down.svg %}</span>
+    </button>
+    {%- if pub.request %}
+    <a class="pub-request" href="mailto:{{ site.email }}?subject={{ 'Publication request: ' | append: pub.title | uri_escape | replace: '&', '%26' }}">Request a copy</a>
+    {%- endif %}
+  </div>
+  <div class="cite-panel is-hidden" id="bib-{{ pub.key }}">
+<pre class="cite-bibtex">{{ pub.bibtex | strip | xml_escape }}</pre>
+    <div class="cite-panel-actions">
+      <button class="cite-copy" type="button">{% include icons/copy.svg %}Copy BibTeX</button>
+      <span class="cite-status" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+</article>
