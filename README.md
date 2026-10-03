@@ -1,51 +1,53 @@
 # bwhewe-13.github.io
 
-Personal website hosted on GitHub Pages. Includes landing page, projects, research, and resume sections, plus shared sidebar partials and site-wide styles.
+Personal website at [ben-whewell.com](https://www.ben-whewell.com), built with Jekyll on
+GitHub Pages.
 
 ## Pages
 
-- index.html: landing/home page
-- projects.html: projects listing
+- index.html: home page (intro, research areas, news)
+- resume.html: resume, with a link to the PDF in cv/
 - research.html: publications and presentations, each with a copyable BibTeX entry
-- resume.html: resume page
-- rl_notes.html: reinforcement learning notes index
-- 404.html: not-found page (GitHub Pages serves it at the requested path, so its asset paths are root-absolute)
+- research/: one overview page per research project
+- projects.html: open-source projects
+- rl_notes.html and rl_notes/: reinforcement learning notebooks
+- 404.html: not-found page
 
 ## Structure
 
-- styling.css: global styles
-- js/: page-level scripts
-- partials/: shared HTML snippets (sidebar)
-- figures/: images and media assets
-- sitemap.xml, robots.txt: search engine discovery
+- _config.yml: site title, role, email, and profile links
+- _layouts/default.html: the page shell every page uses
+- _includes/: head, sidebar, footer, contact links, publication markup, and icons
+- _data/publications.yml: every publication; research.html lists all of them and
+  resume.html lists the journal articles
+- _data/news.yml: news items on the home page
+- _data/nav.yml: sidebar navigation
+- css/styling.css: all styles, with colors defined as variables at the top
+- js/research.js: publication filters and BibTeX copy buttons
+
+GitHub Pages builds the site on push; jekyll-sitemap generates sitemap.xml.
 
 ## Local development
 
-Open any HTML file directly in a browser, or use a simple static server for better routing and caching behavior.
-
-Example (PowerShell):
+Build and serve with Docker (no local Ruby needed):
 
 ```sh
-python -m http.server 8000
+docker run --rm -it -p 4000:4000 -v "$PWD":/srv -w /srv ruby:3.2 \
+  bash -c "bundle install && bundle exec jekyll serve --host 0.0.0.0"
 ```
 
-Then visit:
+Then visit http://localhost:4000.
 
-```
-http://localhost:8000
-```
+## Common edits
 
-## Deployment
-
-This repository is designed for GitHub Pages. Push to the default branch and GitHub Pages will serve the site at the repository URL.
-
-## Notes
-
-- Update shared navigation in partials/sidebar.html.
-- Keep paths relative to support GitHub Pages hosting (404.html is the exception).
-- Adding a publication: copy an existing block in research.html, then give it a
-  citation key used in both the BibTeX and the panel's `id` (as `bib-<key>`).
-  Write the BibTeX flush-left inside the `<pre>`. Note that `--` is invalid
-  inside an HTML comment, so commented-out entries must not use page ranges.
-- Open Graph tags are per-page and use absolute URLs; the preview image is
-  figures/og-card.png (1200x630).
+- Adding a publication: add an entry to _data/publications.yml. `key` must be unique
+  and match the BibTeX key. Set `request: true` to show a "Request a copy" link when
+  there is no free version, and `preprint: true` to keep it off the resume.
+- Adding a news item: add it to the top of _data/news.yml.
+- Adding a notebook to RL Notes: convert it with
+  `jupyter nbconvert --to html --template basic`, add front matter (see
+  rl_notes/00_getting_started.html), wrap the output in `{% raw %}` / `{% endraw %}`,
+  and add a card to rl_notes.html.
+- Open Graph tags come from each page's `title` and `description` front matter; the
+  preview image is figures/og-card.png (1200x630).
+- Icons in _includes/icons/ are from Font Awesome Free 6.7.2 (CC BY 4.0).

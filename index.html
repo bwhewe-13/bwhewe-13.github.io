@@ -1,77 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+title: Home
+---
+<section class="intro">
+  <h1>Ben Whewell</h1>
+  <p class="lede">AI/ML Scientist at Los Alamos National Laboratory</p>
+  <p>
+    I work on neutron transport, nuclear data, and machine learning. Most of my research is
+    about making deterministic transport solvers faster and more accurate: reinforcement
+    learning for multigroup energy grid optimization, hybrid numerical methods, and solution
+    verification. I also build the ML tooling around that work, from training pipelines for
+    simulation data to retrieval-augmented generation (RAG) tools for technical documents.
+  </p>
+  <p>
+    I finished my PhD in Mechanical and Aerospace Engineering at the University of Notre Dame
+    in January 2025. Before graduate school I spent three years as a boilers and turbines
+    operator at a power station in Connecticut.
+  </p>
+  <p class="intro-links">
+    <a class="button" href="/cv/Ben_Whewell_CV.pdf">{% include icons/download.svg %}CV (PDF)</a>
+    <a href="mailto:{{ site.email }}">Email</a>
+    <a href="{{ site.links.scholar }}">Google Scholar</a>
+    <a href="{{ site.links.github }}">GitHub</a>
+  </p>
+</section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ben Whewell — computational scientist at Los Alamos National Laboratory working on neutron transport, nuclear data, and machine learning.">
+<section>
+  <h2>Research</h2>
+  <ul class="area-list">
+    <li>
+      <h3><a href="/research/rl-energy-grids.html">Reinforcement learning for energy grids</a></h3>
+      <p>Training RL agents to choose multigroup energy structures for criticality problems.</p>
+    </li>
+    <li>
+      <h3><a href="/research/hybrid-method.html">Collision-based hybrid method</a></h3>
+      <p>Splitting the transport solve into uncollided and collided parts that use different resolutions.</p>
+    </li>
+    <li>
+      <h3><a href="/research/solution-verification.html">Solution verification</a></h3>
+      <p>Estimating discretization error in transport solutions without running a mesh refinement study.</p>
+    </li>
+    <li>
+      <h3><a href="/research/ml-data-reduction.html">ML for nuclear data reduction</a></h3>
+      <p>Replacing large scattering and fission matrices with neural network surrogates.</p>
+    </li>
+  </ul>
+  <p><a href="/research.html">All publications and presentations</a></p>
+</section>
 
-    <link rel="canonical" href="https://www.ben-whewell.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Ben Whewell">
-    <meta property="og:title" content="Ben Whewell — AI/ML Scientist">
-    <meta property="og:description" content="Ben Whewell — computational scientist at Los Alamos National Laboratory working on neutron transport, nuclear data, and machine learning.">
-    <meta property="og:url" content="https://www.ben-whewell.com/">
-    <meta property="og:image" content="https://www.ben-whewell.com/figures/og-card.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Ben Whewell, AI/ML Scientist — neutron transport, nuclear data, and machine learning at Los Alamos National Laboratory">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
-    <link rel="stylesheet" href="css/styling.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
-    <link rel="icon" type="image/svg+xml" href="figures/favicon.svg">
-    <title>Whewell | Home</title>
-</head>
-
-<body>
-  <div class="container">
-    <!-- <div class="nav">Navbar</div> -->
-    <div id="sidebar-placeholder" class="side-primary"></div>
-    <div class="content">
-      <section id="intro">
-        <div class="section-header">
-          <h2>Welcome</h2>
-        </div>
-        <div class="work-container">
-          <p>
-            I am a computational scientist at Los Alamos National Laboratory working on neutron
-            transport, nuclear data, and machine learning. My research focuses on reinforcement
-            learning for multigroup energy grid optimization, hybrid numerical methods, and
-            solution verification; making deterministic transport solvers faster
-            and more accurate. Alongside this, I build practical AI/ML systems from
-            end-to-end ML pipelines to LLM-powered retrieval-augmented generation (RAG)
-            applications and reinforcement-learning agents.
-          </p>
-          <div class="intro-gallery">
-            <div class="intro-column intro-column-research">
-              <figure class="intro-figure">
-                <img src="figures/lattice-thermal-flux.gif" alt="Thermal flux lattice animation">
-                <figcaption>Collision-Based Hybrid Method.</figcaption>
-              </figure>
-              <figure class="intro-figure">
-                <img src="figures/plutonium-sphere-autodjinn.png" alt="Plutonium sphere autodjinn visualization">
-                <figcaption>Using ML for Memory Reduction.</figcaption>
-              </figure>
-            </div>
-            <div class="intro-column intro-column-sorting">
-              <figure class="intro-figure">
-                <img src="figures/sorting.gif" alt="Sorting animation">
-                <figcaption>Visualization of different sorting algorithms.</figcaption>
-                <a class="intro-download-button" href="scripts/sorting.py" download>Download sorting code</a>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <div class="side-secondary"></div>
-    <div class="footer"></div>
-  </div>
-    <script src="js/sidebar-loader.js"></script>
-</body>
-
-</html>
+<section>
+  <h2>News</h2>
+  <dl class="news">
+    {%- for item in site.data.news %}
+    <dt>{{ item.date }}</dt>
+    <dd>{{ item.text }}</dd>
+    {%- endfor %}
+  </dl>
+</section>

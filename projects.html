@@ -1,165 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+title: Projects
+description: Open-source code by Ben Whewell, including neutron transport solvers and machine learning tools.
+---
+<h1>Projects</h1>
+<p>
+  Open-source code I have written or contributed to. More is on
+  <a href="{{ site.links.github }}">GitHub</a>.
+</p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Open-source projects and GitHub activity from Ben Whewell, including neutron transport solvers and machine learning tools.">
+<section>
+  <h2>Machine learning</h2>
+  <ul class="project-list">
+    <li class="project">
+      <h3><a href="https://github.com/bwhewe-13/MyPDFLibrary">MyPDFLibrary</a></h3>
+      <span class="project-lang">Python</span>
+      <p>Command-line RAG tool for asking questions about a collection of PDFs. Runs a local LLM through Ollama, retrieves passages with vector embeddings, and answers from the retrieved text.</p>
+    </li>
+    <li class="project">
+      <h3><a href="https://github.com/bwhewe-13/rl-lab">rl-lab</a></h3>
+      <span class="project-lang">Python</span>
+      <p>Reinforcement learning library and tutorials covering tabular, deep, multi-agent, and distributed RL with PyTorch, Gymnasium, Stable-Baselines3, and Ray RLlib.</p>
+    </li>
+    <li class="project">
+      <h3><a href="https://github.com/bwhewe-13/DJINN">DJINN</a></h3>
+      <span class="project-lang">Python</span>
+      <p>My maintained fork of LLNL's DJINN (deep jointly-informed neural networks), an algorithm for designing and initializing neural networks.</p>
+    </li>
+    <li class="project">
+      <h3><a href="https://github.com/lanl/wolf">WOLF</a> <span class="project-role">(contributor)</span></h3>
+      <span class="project-lang">Python</span>
+      <p>LANL's open-source workflow orchestration and learning framework. I fixed an async coroutine leak and a BM25 crash on empty corpora, cleaned up PyMuPDF deprecations, and added the missing PDF ingestion endpoint for the knowledge base.</p>
+    </li>
+  </ul>
+</section>
 
-    <link rel="canonical" href="https://www.ben-whewell.com/projects.html">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Ben Whewell">
-    <meta property="og:title" content="Projects &amp; GitHub | Ben Whewell">
-    <meta property="og:description" content="Open-source projects and GitHub activity from Ben Whewell, including neutron transport solvers and machine learning tools.">
-    <meta property="og:url" content="https://www.ben-whewell.com/projects.html">
-    <meta property="og:image" content="https://www.ben-whewell.com/figures/og-card.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Ben Whewell, AI/ML Scientist — neutron transport, nuclear data, and machine learning at Los Alamos National Laboratory">
-    <meta name="twitter:card" content="summary_large_image">
+<section>
+  <h2>Scientific computing</h2>
+  <ul class="project-list">
+    <li class="project">
+      <h3><a href="https://github.com/bwhewe-13/ants">ants</a></h3>
+      <span class="project-lang">Cython</span>
+      <p>Discrete ordinates (S<sub>N</sub>) multigroup neutron transport code in one and two dimensions. Includes the collision-based hybrid method, ML acceleration, and solution verification with the method of nearby problems.</p>
+      <p class="project-links"><a href="https://bwhewe-13.github.io/ants/">Documentation</a></p>
+    </li>
+    <li class="project">
+      <h3><a href="https://github.com/bwhewe-13/discrete1">discrete1</a></h3>
+      <span class="project-lang">Python</span>
+      <p>One-dimensional neutron transport solver, with optional DJINN models in place of the scattering and fission matrix products.</p>
+      <p class="project-links"><a href="https://bwhewe-13.github.io/discrete1/">Documentation</a></p>
+    </li>
+    <li class="project">
+      <h3><a href="https://github.com/bwhewe-13/NeutronDiffusion">NeutronDiffusion</a></h3>
+      <span class="project-lang">Python</span>
+      <p>One-dimensional neutron diffusion solver for slab, cylindrical, and spherical geometries.</p>
+    </li>
+    <li class="project">
+      <h3><a href="https://github.com/mcdc-project/mcdc">MC/DC</a> <span class="project-role">(contributor)</span></h3>
+      <span class="project-lang">Python</span>
+      <p>Monte Carlo / Dynamic Code, a Python-based Monte Carlo radiation transport code.</p>
+    </li>
+    <li class="project">
+      <h3><a href="https://github.com/bwhewe-13/NumericalAnalysis">NumericalAnalysis</a></h3>
+      <span class="project-lang">C++</span>
+      <p>Algorithms from Burden and Faires' <em>Numerical Analysis</em> (9th edition) written in C++ with Python bindings.</p>
+    </li>
+  </ul>
+</section>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
-    <link rel="stylesheet" href="css/styling.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
-    <link rel="icon" type="image/svg+xml" href="figures/favicon.svg">
-    <title>Whewell | Projects</title>
-</head>
-
-<body>
-  <div class="container">
-    <div id="sidebar-placeholder" class="side-primary"></div>
-    <div class="content">
-        <section id="github-contributions" class="github-contributions" data-user="bwhewe-13">
-            <div class="section-header">
-                <h2>GitHub Contributions</h2>
-                <a href="https://github.com/bwhewe-13" target="_blank" rel="noopener noreferrer">View profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-            <div class="contributions-card">
-                <img
-                    src="https://ghchart.rshah.org/bwhewe-13"
-                    alt="GitHub contributions calendar for bwhewe-13"
-                    class="contributions-chart"
-                >
-                <p class="contributions-caption">Last 12 months of public contributions.</p>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="section-header">
-            <h2>GitHub Projects</h2>
-            </div>
-            <p class="projects-updated" id="projects-updated">Last updated: --</p>
-            <div class="projects-grid">
-                <div class="project-card" data-repo="bwhewe-13/MyPDFLibrary">
-                    <h3>MyPDFLibrary</h3>
-                    <p>Retrieval-augmented generation (RAG) CLI over PDF documents -- local LLM inference with Ollama, vector-embedding retrieval, and grounded question answering</p>
-                    <div class="project-stats">
-                        <span class="icon"><img src="figures/python-logo.svg" alt="Python logo" class="project-language-logo"></span>
-                        <span class="icon project-stat" data-stat="stars"><i class="fa-regular fa-star" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                        <span class="icon project-stat" data-stat="forks"><i class="fa fa-code-fork" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                    </div>
-                    <p><a href="https://github.com/bwhewe-13/MyPDFLibrary" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
-                </div>
-
-                <div class="project-card" data-repo="bwhewe-13/rl-lab">
-                    <h3>rl-lab</h3>
-                    <p>Reinforcement-learning library and tutorials -- tabular, deep, multi-agent, and distributed RL with PyTorch, Gymnasium, Stable-Baselines3, and Ray RLlib</p>
-                    <div class="project-stats">
-                        <span class="icon"><img src="figures/jupyter-logo.svg" alt="Jupyter logo" class="project-language-logo"></span>
-                        <span class="icon project-stat" data-stat="stars"><i class="fa-regular fa-star" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                        <span class="icon project-stat" data-stat="forks"><i class="fa fa-code-fork" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                    </div>
-                    <p><a href="https://github.com/bwhewe-13/rl-lab" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
-                </div>
-
-                <div class="project-card" data-repo="bwhewe-13/DJINN">
-                    <h3>DJINN</h3>
-                    <p>Deep jointly-informed neural networks -- an easy-to-use algorithm for designing/initializing neural nets</p>
-                    <div class="project-stats">
-                        <span class="icon"><img src="figures/python-logo.svg" alt="Python logo" class="project-language-logo"></span>
-                        <span class="icon project-stat" data-stat="stars"><i class="fa-regular fa-star" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                        <span class="icon project-stat" data-stat="forks"><i class="fa fa-code-fork" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                    </div>
-                    <p><a href="https://github.com/bwhewe-13/DJINN" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
-                </div>
-
-                <div class="project-card" data-repo="bwhewe-13/discrete1">
-                    <h3>discrete1</h3>
-                    <p>One Dimensional Neutron Transport Solver</p>
-                    <div class="project-stats">
-                        <span class="icon"><img src="figures/python-logo.svg" alt="Python logo" class="project-language-logo"></span>
-                        <span class="icon project-stat" data-stat="stars"><i class="fa-regular fa-star" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                        <span class="icon project-stat" data-stat="forks"><i class="fa fa-code-fork" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                    </div>
-                    <p><a href="https://github.com/bwhewe-13/discrete1" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
-                    <p><a href="https://bwhewe-13.github.io/discrete1/" target="_blank" rel="noopener noreferrer">Read the docs <i class="fa-solid fa-book" aria-hidden="true"></i></a></p>
-                </div>
-
-                <div class="project-card" data-repo="bwhewe-13/ants">
-                    <h3>ants</h3>
-                    <p>A Discrete Ordinates (SN) Multigroup Neutron Transport Code</p>
-                    <div class="project-stats">
-                        <span class="icon"><img src="figures/cython-logo.svg" alt="Cython logo" class="project-language-logo"></span>
-                        <span class="icon project-stat" data-stat="stars"><i class="fa-regular fa-star" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                        <span class="icon project-stat" data-stat="forks"><i class="fa fa-code-fork" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                    </div>
-                    <p><a href="https://github.com/bwhewe-13/ants" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
-                    <p><a href="https://bwhewe-13.github.io/ants/" target="_blank" rel="noopener noreferrer">Read the docs <i class="fa-solid fa-book" aria-hidden="true"></i></a></p>
-                </div>
-
-                <div class="project-card" data-repo="bwhewe-13/NeutronDiffusion">
-                    <h3>NeutronDiffusion</h3>
-                    <p>One Dimensional Neutron Diffusion Equation for Slab, Cylindrical, and Sphere Geometries</p>
-                    <div class="project-stats">
-                        <span class="icon"><img src="figures/python-logo.svg" alt="Python logo" class="project-language-logo"></span>
-                        <span class="icon project-stat" data-stat="stars"><i class="fa-regular fa-star" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                        <span class="icon project-stat" data-stat="forks"><i class="fa fa-code-fork" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                    </div>
-                    <p><a href="https://github.com/bwhewe-13/NeutronDiffusion" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
-                </div>
-
-                <div class="project-card" data-repo="mcdc-project/mcdc">
-                    <h3>MCDC</h3>
-                    <p>MC/DC: Monte Carlo Dynamic Code (Contributor)</p>
-                    <div class="project-stats">
-                        <span class="icon"><img src="figures/python-logo.svg" alt="Python logo" class="project-language-logo"></span>
-                        <span class="icon project-stat" data-stat="stars"><i class="fa-regular fa-star" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                        <span class="icon project-stat" data-stat="forks"><i class="fa fa-code-fork" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                    </div>
-                    <p><a href="https://github.com/mcdc-project/mcdc" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
-                </div>
-
-                <div class="project-card" data-repo="bwhewe-13/NumericalAnalysis">
-                    <h3>NumericalAnalysis</h3>
-                    <p>Implementing algorithms from 'Numerical Analysis' by Richard L. Burden and J. Douglas Faires in C++ with Python bindings</p>
-                    <div class="project-stats">
-                        <span class="icon"><img src="figures/cpp-logo.svg" alt="C++ logo" class="project-language-logo"></span>
-                        <span class="icon project-stat" data-stat="stars"><i class="fa-regular fa-star" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                        <span class="icon project-stat" data-stat="forks"><i class="fa fa-code-fork" aria-hidden="true"></i> <span class="stat-value">--</span></span>
-                    </div>
-                    <p><a href="https://github.com/bwhewe-13/NumericalAnalysis/" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="github-activity" class="github-activity" data-user="bwhewe-13">
-            <div class="section-header">
-                <h2>GitHub Activity</h2>
-            </div>
-            <p class="activity-updated" id="activity-updated">Last updated: --</p>
-            <div class="activity-list" id="activity-list">
-                <div class="activity-empty">Loading activity...</div>
-            </div>
-        </section>
-
-    </div>
-    <div class="side-secondary"></div>
-    <div class="footer"></div>
-  </div>
-    <script src="js/projects.js"></script>
-    <script src="js/sidebar-loader.js"></script>
-</body>
-
-</html>
+<section>
+  <h2>Scripts and gists</h2>
+  <p>Small single-file Python scripts.</p>
+  <ul class="project-list">
+    <li class="project">
+      <h3><a href="https://gist.github.com/bwhewe-13/65dc615b20d5f8581784166fd047dc30">break_loop</a></h3>
+      <span class="project-lang">Python</span>
+      <p>Decorator for stopping a long-running loop early. The first Ctrl+C finishes the current iteration and continues with the code after the loop; a second one quits. Useful for training runs or parameter sweeps you want to cut short without losing the results so far.</p>
+    </li>
+    <li class="project">
+      <h3><a href="https://gist.github.com/bwhewe-13/18ebc5eebf5191ef5014cb9e25c0ad81">Alert sound</a></h3>
+      <span class="project-lang">Python</span>
+      <p>Plays a short alert sound with the native player on macOS, Linux, or Windows, and falls back to the terminal bell. Useful for knowing when a long job finishes.</p>
+    </li>
+    <li class="project project-with-media">
+      <h3><a href="/scripts/sorting.py" download>Sorting visualizations</a></h3>
+      <span class="project-lang">Python</span>
+      <p>Animation of merge, bubble, selection, and insertion sort running on the same data, made with Matplotlib. With 100 elements, merge sort finishes in 7 passes while the other three take 99.</p>
+      <video class="project-media" autoplay muted loop playsinline preload="metadata" width="660" height="986">
+        <source src="/figures/sorting.mp4" type="video/mp4">
+      </video>
+    </li>
+  </ul>
+</section>

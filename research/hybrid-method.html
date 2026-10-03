@@ -1,0 +1,54 @@
+---
+title: Collision-based hybrid method
+description: A collision-based hybrid method for time-dependent multigroup neutron transport that solves uncollided and collided parts on different energy and angular grids.
+nav: Research
+content_class: prose
+---
+<p class="breadcrumb"><a href="/research.html">Research</a></p>
+<h1>Collision-based hybrid method</h1>
+
+<p>
+  Time-dependent neutron transport is expensive because every time step needs a converged
+  source iteration on fine energy and angular grids. Coarsening those grids makes each
+  iteration cheaper, but it adds discretization error to the whole solution.
+</p>
+
+<h2>Approach</h2>
+<p>
+  The collision-based hybrid method splits the transport equation into two equations at
+  each time step. The uncollided equation contains the external and boundary sources and
+  can be solved in a single iteration, so it is solved on fine energy and angular grids.
+  The collided equation contains the scattering and fission terms, and the number of
+  iterations it needs depends on the number of collisions, so it is solved on coarse
+  grids. The two solutions are combined to give the flux for that time step.
+</p>
+<p>
+  My first paper on the method extended it to the multigroup setting. The second extended
+  it to two spatial dimensions with a second-order time discretization, and improved how
+  the energy groups are coarsened.
+</p>
+
+<figure>
+  <video autoplay muted loop playsinline preload="metadata" poster="/figures/lattice-thermal-flux-poster.png" width="452" height="454">
+    <source src="/figures/lattice-thermal-flux.mp4" type="video/mp4">
+  </video>
+  <figcaption>Thermal flux in a lattice problem, solved with the collision-based hybrid method.</figcaption>
+</figure>
+
+<h2>Results</h2>
+<p>
+  In most of the time-dependent problems tested, the hybrid method is more efficient than
+  the traditional multigroup approach. In two 2D problems it needed up to 50% less
+  convergence time than an equivalent monolithic coarsening scheme, and it was more
+  accurate in most of the low-fidelity comparisons.
+</p>
+
+<h2>Publications</h2>
+{% include pub-list.html keys="whewell2025hybrid2d whewell2023multigroup whewell2024dissertation" %}
+
+<h2>Code</h2>
+<p>
+  The method is implemented in <a href="https://github.com/bwhewe-13/ants">ants</a>
+  (one and two dimensions) and <a href="https://github.com/bwhewe-13/discrete1">discrete1</a>
+  (one dimension).
+</p>

@@ -1,0 +1,55 @@
+{%- if page.url == "/" -%}
+  {%- assign page_title = site.title | append: ", " | append: site.role -%}
+{%- else -%}
+  {%- assign page_title = page.title | append: " | " | append: site.title -%}
+{%- endif -%}
+{%- assign description = page.description | default: site.description | strip -%}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ description }}">
+{%- if page.noindex %}
+<meta name="robots" content="noindex">
+{%- else %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/figures/og-card.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ben Whewell, AI/ML Scientist: neutron transport, nuclear data, and machine learning at Los Alamos National Laboratory">
+<meta name="twitter:card" content="summary_large_image">
+{%- endif %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/css/styling.css">
+<link rel="icon" type="image/svg+xml" href="/figures/favicon.svg">
+{%- if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ben Whewell",
+  "jobTitle": "{{ site.role }}",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Los Alamos National Laboratory"
+  },
+  "alumniOf": "University of Notre Dame",
+  "url": "{{ site.url }}/",
+  "image": "{{ '/figures/linkedin_profile.jpg' | absolute_url }}",
+  "sameAs": [
+    "{{ site.links.orcid }}",
+    "{{ site.links.scholar }}",
+    "{{ site.links.github }}",
+    "{{ site.links.linkedin }}",
+    "{{ site.links.researchgate }}"
+  ]
+}
+</script>
+{%- endif %}

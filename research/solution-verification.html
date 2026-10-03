@@ -1,0 +1,42 @@
+---
+title: Solution verification
+description: Estimating spatial discretization error in neutron transport solutions on a single grid with the method of nearby problems.
+nav: Research
+content_class: prose
+---
+<p class="breadcrumb"><a href="/research.html">Research</a></p>
+<h1>Solution verification for transport solvers</h1>
+
+<p>
+  Solution verification estimates how much of the error in a simulation comes from the
+  discretization. The usual way to do it is a grid refinement study, which solves the same
+  problem on several successively finer meshes. For large transport problems, the finest
+  of those meshes can be too expensive to run.
+</p>
+
+<h2>Approach</h2>
+<p>
+  I use the method of nearby problems (MNP), which only needs one spatial grid. An
+  analytical curve fit is interpolated from the numerical solution, and the residual
+  between the curve fit and the numerical solution is added to the governing equation as
+  an extra source term. The nearby problem is then solved with that source and with
+  boundary conditions that match the curve fit. Comparing the nearby solution to the curve
+  fit gives an estimate of the spatial discretization error.
+</p>
+
+<h2>Results</h2>
+<p>
+  The method finds spatial error in one- and two-dimensional discrete ordinates problems,
+  for both fixed-source and criticality calculations. For the C5G7 benchmark it identifies
+  the regions with high spatial error. The journal paper also combines Monte Carlo with the
+  discrete ordinates nearby problem for one- and two-dimensional fixed-source problems.
+</p>
+
+<h2>Publications</h2>
+{% include pub-list.html keys="whewell2025vvuq whewell2025mcsinglegrid whewell2023nearby whewell2024dissertation" %}
+
+<h2>Code</h2>
+<p>
+  The method of nearby problems is part of the verification suite in
+  <a href="https://github.com/bwhewe-13/ants">ants</a>.
+</p>

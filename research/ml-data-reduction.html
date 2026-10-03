@@ -1,0 +1,42 @@
+---
+title: ML for nuclear data reduction
+description: Replacing multigroup scattering and fission cross section matrices with autoencoder and DJINN models to reduce data storage in neutron transport.
+nav: Research
+content_class: prose
+---
+<p class="breadcrumb"><a href="/research.html">Research</a></p>
+<h1>Machine learning for nuclear data reduction</h1>
+
+<p>
+  Multigroup discrete ordinates calculations need fission and scattering cross section
+  matrices for every material, temperature, and enrichment level. With hundreds of energy
+  groups, storing those matrices becomes a limiting factor.
+</p>
+
+<h2>Approach</h2>
+<p>
+  Instead of storing the matrices, I train models that reproduce the function mapping the
+  scalar flux to the scattering and fission sources. The models are built from autoencoders
+  and Deep Jointly-Informed Neural Networks (DJINN).
+</p>
+
+<figure>
+  <img src="/figures/plutonium-sphere-autodjinn.png" alt="Scatter rate density versus radius for a plutonium sphere with an HDPE layer, comparing the reference solution with the AutoDJINN model" loading="lazy">
+  <figcaption>Scatter rate density in a plutonium sphere with an HDPE layer. The autoencoder and DJINN (AutoDJINN) solution gives k<sub>eff</sub> = 0.843933 against a reference of 0.843807.</figcaption>
+</figure>
+
+<h2>Results</h2>
+<p>
+  For a 618-group problem, the models cut data storage by 94% while preserving the scalar
+  flux, staying general, and reducing wall-clock time.
+</p>
+
+<h2>Publications</h2>
+{% include pub-list.html keys="whewell2022datareduction whewell2021reduced whewell2020autoencoders" %}
+
+<h2>Code</h2>
+<p>
+  The DJINN models are available as an option in
+  <a href="https://github.com/bwhewe-13/discrete1">discrete1</a>, using my maintained fork of
+  <a href="https://github.com/bwhewe-13/DJINN">DJINN</a>.
+</p>

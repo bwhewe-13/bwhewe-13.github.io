@@ -1,0 +1,324 @@
+# Every publication and presentation on the site, newest first.
+# research.html lists all of them; resume.html lists type "journal".
+# request: true adds a "Request a copy" email link for papers with no free version.
+
+- key: whewell2026rlgrid
+  type: journal
+  year: 2026
+  title: "Application of Reinforcement Learning for Multigroup Energy Grid Optimization for Neutron Transport Criticality Problems"
+  citation: "Ben Whewell, Nathan Gibson, and Ajeeta Khatiwada, (2026). Under Review. arXiv: <a href=\"https://arxiv.org/abs/2605.27895\">2605.27895</a>"
+  summary: "Deep reinforcement learning for sequential decision-making and combinatorial optimization."
+  preprint: true
+  request: false
+  bibtex: |
+    @misc{whewell2026rlgrid,
+      author        = {Whewell, Ben and Gibson, Nathan and Khatiwada, Ajeeta},
+      title         = {{Application of Reinforcement Learning for Multigroup Energy Grid Optimization for Neutron Transport Criticality Problems}},
+      year          = {2026},
+      eprint        = {2605.27895},
+      archivePrefix = {arXiv},
+      note          = {Under review}
+    }
+
+- key: whewell2026physor
+  type: conference
+  year: 2026
+  title: "Application of Reinforcement Learning to Multigroup Energy Grid Optimization for Criticality Problems"
+  citation: "Ben Whewell, Nathan Gibson, and Ajeeta Khatiwada, (2026). <em>International Conference on the Physics of Reactors (PHYSOR 2026),</em> Turin, Italy."
+  summary: "Deep reinforcement learning for sequential decision-making and combinatorial optimization."
+  request: true
+  bibtex: |
+    @inproceedings{whewell2026physor,
+      author    = {Whewell, Ben and Gibson, Nathan and Khatiwada, Ajeeta},
+      title     = {{Application of Reinforcement Learning to Multigroup Energy Grid Optimization for Criticality Problems}},
+      booktitle = {International Conference on the Physics of Reactors (PHYSOR 2026)},
+      address   = {Turin, Italy},
+      year      = {2026}
+    }
+
+- key: nichols2026shielding
+  type: conference
+  year: 2026
+  title: "Predicting Self-Shielded Multigroup Microscopic Cross Sections Using Artificial Neural Networks"
+  citation: "Joshua Nichols, Ben Whewell, Nathan Gibson, and Andrew Osborne, (2026). <em>International Conference on the Physics of Reactors (PHYSOR 2026),</em> Turin, Italy."
+  summary: "Artificial neural networks for surrogate regression modeling."
+  request: true
+  bibtex: |
+    @inproceedings{nichols2026shielding,
+      author    = {Nichols, Joshua and Whewell, Ben and Gibson, Nathan and Osborne, Andrew},
+      title     = {{Predicting Self-Shielded Multigroup Microscopic Cross Sections Using Artificial Neural Networks}},
+      booktitle = {International Conference on the Physics of Reactors (PHYSOR 2026)},
+      address   = {Turin, Italy},
+      year      = {2026}
+    }
+
+- key: rouse2025metaheuristic
+  type: report
+  year: 2025
+  title: "MetaHeuristic Feature Selection for Energy Group Optimization and Analysis"
+  citation: "Natalie Rouse, Benjamin Whewell, and Nathan Gibson, (2025). <em>Technical Report LA-UR-25-29285, Los Alamos National Laboratory.</em> DOI: <a href=\"https://doi.org/10.2172/2588817\">10.2172/2588817</a>"
+  summary: "Metaheuristic feature selection for high-dimensional optimization."
+  request: false
+  bibtex: |
+    @techreport{rouse2025metaheuristic,
+      author      = {Rouse, Natalie and Whewell, Benjamin and Gibson, Nathan},
+      title       = {{MetaHeuristic Feature Selection for Energy Group Optimization and Analysis}},
+      institution = {Los Alamos National Laboratory},
+      year        = {2025},
+      number      = {LA-UR-25-29285},
+      doi         = {10.2172/2588817}
+    }
+
+- key: whewell2025vvuq
+  type: journal
+  year: 2025
+  title: "Single Grid Error Estimation for Neutron Transport Solvers"
+  citation: "Ben Whewell and Ryan G. McClarren, (2025). <em>Journal of Verification, Validation and Uncertainty Quantification.</em> 10(2): 021001. DOI: <a href=\"https://doi.org/10.1115/1.4069426\">10.1115/1.4069426</a>"
+  request: true
+  bibtex: |
+    @article{whewell2025vvuq,
+      author  = {Whewell, Ben and McClarren, Ryan G.},
+      title   = {{Single Grid Error Estimation for Neutron Transport Solvers}},
+      journal = {Journal of Verification, Validation and Uncertainty Quantification},
+      year    = {2025},
+      volume  = {10},
+      number  = {2},
+      pages   = {021001},
+      doi     = {10.1115/1.4069426}
+    }
+
+- key: whewell2025hybrid2d
+  type: journal
+  year: 2025
+  title: "Collision-Based Hybrid Method for Two-Dimensional Neutron Transport Problems"
+  citation: "Ben Whewell and Ryan G. McClarren, (2025). <em>Nuclear Science and Engineering,</em> 1-23. DOI: <a href=\"https://doi.org/10.1080/00295639.2025.2489778\">10.1080/00295639.2025.2489778</a>"
+  request: true
+  bibtex: |
+    @article{whewell2025hybrid2d,
+      author  = {Whewell, Ben and McClarren, Ryan G.},
+      title   = {{Collision-Based Hybrid Method for Two-Dimensional Neutron Transport Problems}},
+      journal = {Nuclear Science and Engineering},
+      year    = {2025},
+      pages   = {1--23},
+      doi     = {10.1080/00295639.2025.2489778}
+    }
+
+- key: whewell2025mcsinglegrid
+  type: conference
+  year: 2025
+  title: "Single Grid Error Estimate in Two-Dimensional Neutron Transport Problems"
+  citation: "Ben Whewell and Ryan G. McClarren, (2025). <em>The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering.</em>"
+  request: true
+  bibtex: |
+    @inproceedings{whewell2025mcsinglegrid,
+      author    = {Whewell, Ben and McClarren, Ryan G.},
+      title     = {{Single Grid Error Estimate in Two-Dimensional Neutron Transport Problems}},
+      booktitle = {The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering},
+      year      = {2025}
+    }
+
+- key: whewell2025mcsinglegrid-talk
+  type: presentation
+  year: 2025
+  title: "Single Grid Error Estimate in Two-Dimensional Neutron Transport Problems"
+  citation: "Ben Whewell and Ryan G. McClarren, (2025). <em>The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering.</em> Technical Session."
+  request: true
+  bibtex: |
+    @misc{whewell2025mcsinglegrid-talk,
+      author       = {Whewell, Ben and McClarren, Ryan G.},
+      title        = {{Single Grid Error Estimate in Two-Dimensional Neutron Transport Problems}},
+      year         = {2025},
+      howpublished = {Technical session, The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering}
+    }
+
+- key: whewell2024dissertation
+  type: report
+  year: 2024
+  title: "Hybrid Numerical Methods and Solution Verification for the Neutron Transport Equation"
+  citation: "Benjamin Joseph Whewell, (2024). <em>University of Notre Dame.</em> Dissertation. DOI: <a href=\"https://doi.org/10.7274/27927858.v1\">10.7274/27927858.v1</a>"
+  request: false
+  bibtex: |
+    @phdthesis{whewell2024dissertation,
+      author = {Whewell, Benjamin Joseph},
+      title  = {{Hybrid Numerical Methods and Solution Verification for the Neutron Transport Equation}},
+      school = {University of Notre Dame},
+      year   = {2024},
+      doi    = {10.7274/27927858.v1}
+    }
+
+- key: whewell2023nearby
+  type: conference
+  year: 2023
+  title: "Solution Verification with the Method of Nearby Problems for Neutron Transport Applications"
+  citation: "Ben Whewell and Ryan G. McClarren, (2023). <em>The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering.</em>"
+  request: true
+  bibtex: |
+    @inproceedings{whewell2023nearby,
+      author    = {Whewell, Ben and McClarren, Ryan G.},
+      title     = {{Solution Verification with the Method of Nearby Problems for Neutron Transport Applications}},
+      booktitle = {The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering},
+      year      = {2023}
+    }
+
+- key: whewell2023nearby-poster
+  type: presentation
+  year: 2023
+  title: "Solution Verification with the Method of Nearby Problems for Neutron Transport Applications"
+  citation: "Ben Whewell and Ryan G. McClarren, (2023). <em>The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering.</em> Poster Presentation."
+  request: true
+  bibtex: |
+    @misc{whewell2023nearby-poster,
+      author       = {Whewell, Ben and McClarren, Ryan G.},
+      title        = {{Solution Verification with the Method of Nearby Problems for Neutron Transport Applications}},
+      year         = {2023},
+      howpublished = {Poster presentation, The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering}
+    }
+
+- key: whewell2023multigroup
+  type: journal
+  year: 2023
+  title: "Multigroup Neutron Transport Using a Collision-Based Hybrid Method"
+  citation: "Ben Whewell, Ryan G. McClarren, Cory D. Hauck, and Minwoo Shin, (2023). <em>Nuclear Science and Engineering,</em> 197:7, 1386-1405. DOI: <a href=\"https://doi.org/10.1080/00295639.2022.2154119\">10.1080/00295639.2022.2154119</a>"
+  request: true
+  bibtex: |
+    @article{whewell2023multigroup,
+      author  = {Whewell, Ben and McClarren, Ryan G. and Hauck, Cory D. and Shin, Minwoo},
+      title   = {{Multigroup Neutron Transport Using a Collision-Based Hybrid Method}},
+      journal = {Nuclear Science and Engineering},
+      year    = {2023},
+      volume  = {197},
+      number  = {7},
+      pages   = {1386--1405},
+      doi     = {10.1080/00295639.2022.2154119}
+    }
+
+- key: kusch2022lowrank
+  type: journal
+  year: 2022
+  title: "A low-rank power iteration scheme for neutron transport criticality problems"
+  citation: "Jonas Kusch, Benjamin Whewell, Ryan McClarren, and Martin Frank, (2022). <em>Journal of Computational Physics,</em> 470, 111587. DOI: <a href=\"https://doi.org/10.1016/j.jcp.2022.111587\">10.1016/j.jcp.2022.111587</a>"
+  request: false
+  bibtex: |
+    @article{kusch2022lowrank,
+      author  = {Kusch, Jonas and Whewell, Benjamin and McClarren, Ryan G. and Frank, Martin},
+      title   = {{A low-rank power iteration scheme for neutron transport criticality problems}},
+      journal = {Journal of Computational Physics},
+      year    = {2022},
+      volume  = {470},
+      pages   = {111587},
+      doi     = {10.1016/j.jcp.2022.111587}
+    }
+
+- key: whewell2022datareduction
+  type: journal
+  year: 2022
+  title: "Data Reduction in Deterministic Neutron Transport Calculations Using Machine Learning"
+  citation: "Ben Whewell and Ryan G. McClarren, (2022). <em>Annals of Nuclear Energy,</em> 176, p. 109276. DOI: <a href=\"https://doi.org/10.1016/j.anucene.2022.109276\">10.1016/j.anucene.2022.109276</a>"
+  summary: "Neural-network autoencoders for dimensionality reduction and model compression."
+  request: true
+  bibtex: |
+    @article{whewell2022datareduction,
+      author  = {Whewell, Ben and McClarren, Ryan G.},
+      title   = {{Data Reduction in Deterministic Neutron Transport Calculations Using Machine Learning}},
+      journal = {Annals of Nuclear Energy},
+      year    = {2022},
+      volume  = {176},
+      pages   = {109276},
+      doi     = {10.1016/j.anucene.2022.109276}
+    }
+
+- key: whewell2021reduced
+  type: conference
+  year: 2021
+  title: "Reduced Models for Nuclear Data in Transport Equations"
+  citation: "B. Whewell and Ryan G. McClarren, (2021). <em>The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering,</em> p. 1427-1436."
+  summary: "Dimensionality reduction and reduced-order modeling."
+  request: true
+  bibtex: |
+    @inproceedings{whewell2021reduced,
+      author    = {Whewell, Ben and McClarren, Ryan G.},
+      title     = {{Reduced Models for Nuclear Data in Transport Equations}},
+      booktitle = {The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering},
+      year      = {2021},
+      pages     = {1427--1436}
+    }
+
+- key: whewell2021reduced-talk
+  type: presentation
+  year: 2021
+  title: "Reduced Models for Nuclear Data in Transport Equations"
+  citation: "B. Whewell and Ryan G. McClarren, (2021). <em>Society for Industrial and Applied Mathematics Conference on Computational Science and Engineering.</em> Virtual."
+  summary: "Dimensionality reduction and reduced-order modeling."
+  request: true
+  bibtex: |
+    @misc{whewell2021reduced-talk,
+      author       = {Whewell, Ben and McClarren, Ryan G.},
+      title        = {{Reduced Models for Nuclear Data in Transport Equations}},
+      year         = {2021},
+      howpublished = {Society for Industrial and Applied Mathematics Conference on Computational Science and Engineering, virtual}
+    }
+
+- key: whewell2020pu239
+  type: journal
+  year: 2020
+  title: "Evaluating 239Pu(n,f) cross sections via machine learning using experimental data, covariances, and measurement features"
+  citation: "B. Whewell, M. Grosskopf, and D. Neudecker, (2020). <em>Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors, and Associated Equipment,</em> 978, p. 164305. DOI: <a href=\"https://doi.org/10.1016/j.nima.2020.164305\">10.1016/j.nima.2020.164305</a>"
+  summary: "Supervised ML regression with feature engineering on experimental data and covariances."
+  request: true
+  bibtex: |
+    @article{whewell2020pu239,
+      author  = {Whewell, Ben and Grosskopf, Michael and Neudecker, Denise},
+      title   = {{Evaluating 239Pu(n,f) cross sections via machine learning using experimental data, covariances, and measurement features}},
+      journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors, and Associated Equipment},
+      year    = {2020},
+      volume  = {978},
+      pages   = {164305},
+      doi     = {10.1016/j.nima.2020.164305}
+    }
+
+- key: whewell2020autoencoders
+  type: presentation
+  year: 2020
+  title: "Applying Autoencoders for Data Reduction of Neutron Scattering Matrices"
+  citation: "Ben Whewell and Ryan G. McClarren, (2020). <em>Conference on Data Analysis.</em> Poster Presentation."
+  summary: "Autoencoder representation learning for high-dimensional data compression."
+  request: true
+  bibtex: |
+    @misc{whewell2020autoencoders,
+      author       = {Whewell, Ben and McClarren, Ryan G.},
+      title        = {{Applying Autoencoders for Data Reduction of Neutron Scattering Matrices}},
+      year         = {2020},
+      howpublished = {Poster presentation, Conference on Data Analysis}
+    }
+
+- key: whewell2019datafusion
+  type: conference
+  year: 2019
+  title: "Data Fusion Techniques for Improving Fission Neutron Multiplicity Data"
+  citation: "Benjamin Whewell, Ryan G. McClarren, and Simon Bolding, (2019). <em>The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering,</em> p. 1072-1080."
+  summary: "Statistical data fusion for multi-source data integration."
+  request: true
+  bibtex: |
+    @inproceedings{whewell2019datafusion,
+      author    = {Whewell, Benjamin and McClarren, Ryan G. and Bolding, Simon},
+      title     = {{Data Fusion Techniques for Improving Fission Neutron Multiplicity Data}},
+      booktitle = {The International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering},
+      year      = {2019},
+      pages     = {1072--1080}
+    }
+
+- key: whewell2019outliers
+  type: report
+  year: 2019
+  title: "Adjusting for Outlying Observations in Nuclear Data Evaluation using Machine Learning"
+  citation: "Benjamin Whewell, (2019). <em>Technical Report LA-UR-19-26924, Los Alamos National Laboratory.</em>"
+  summary: "ML-based anomaly and outlier detection for data quality."
+  request: true
+  bibtex: |
+    @techreport{whewell2019outliers,
+      author      = {Whewell, Benjamin},
+      title       = {{Adjusting for Outlying Observations in Nuclear Data Evaluation using Machine Learning}},
+      institution = {Los Alamos National Laboratory},
+      year        = {2019},
+      number      = {LA-UR-19-26924}
+    }

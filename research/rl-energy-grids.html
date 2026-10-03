@@ -1,0 +1,42 @@
+---
+title: Reinforcement learning for energy grids
+description: Using reinforcement learning and neural network surrogates to choose multigroup energy structures for neutron transport criticality problems.
+nav: Research
+content_class: prose
+---
+<p class="breadcrumb"><a href="/research.html">Research</a></p>
+<h1>Reinforcement learning for multigroup energy grids</h1>
+
+<p>
+  Multigroup transport codes collapse continuous-energy nuclear data onto a fixed set of
+  energy groups, and where the group boundaries fall has a large effect on accuracy. A poor
+  structure loses accuracy, and adding groups to make up for it costs run time and memory.
+  Most structures in common use were picked by hand or by heuristics for one class of
+  problem.
+</p>
+
+<h2>Approach</h2>
+<p>
+  I treat building a group structure as a sequence of decisions. The agent starts from a
+  high-fidelity energy grid and removes boundaries one at a time until it reaches the
+  target number of groups. It is trained with a modified version of proximal policy
+  optimization (PPO), and the reward favors accurate structures that use fewer groups.
+  Because the agent learns which boundaries matter, it avoids the local minima that a
+  greedy search can get stuck in, without restricting the starting grid.
+</p>
+<p>
+  Running a full transport solve for every candidate structure would make training far too
+  slow. Instead, the reward comes from neural network surrogates that take energy, material,
+  and spatial information as inputs. This removes the main computational limit on group
+  structure optimization and also speeds up training.
+</p>
+
+<h2>Results</h2>
+<p>
+  On the Godiva and BeRP ball criticality problems, the group structures built by the agent
+  outperform commonly used group structures. They perform about as well as hierarchical
+  agglomeration, with more flexibility in how the final structure is chosen.
+</p>
+
+<h2>Publications</h2>
+{% include pub-list.html keys="whewell2026rlgrid whewell2026physor rouse2025metaheuristic" %}
