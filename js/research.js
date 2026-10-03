@@ -1,23 +1,5 @@
 const statusTimers = new WeakMap();
 
-function normalizeBibtex(text) {
-  const lines = text.replace(/\r\n/g, '\n').split('\n');
-
-  while (lines.length > 0 && lines[0].trim() === '') {
-    lines.shift();
-  }
-  while (lines.length > 0 && lines[lines.length - 1].trim() === '') {
-    lines.pop();
-  }
-
-  const indents = lines
-    .filter((line) => line.trim() !== '')
-    .map((line) => line.match(/^[ \t]*/)[0].length);
-  const shortest = indents.length > 0 ? Math.min(...indents) : 0;
-
-  return lines.map((line) => line.slice(shortest)).join('\n');
-}
-
 function fallbackCopy(text) {
   const field = document.createElement('textarea');
   field.value = text;
@@ -84,6 +66,7 @@ function showStatus(statusElement, message, isError) {
 function initPublicationFilters() {
   const filterButtons = document.querySelectorAll('.publication-filters .filter-button');
   const publicationItems = document.querySelectorAll('.publication-item');
+  const yearGroups = document.querySelectorAll('.pub-year-group');
 
   if (filterButtons.length === 0 || publicationItems.length === 0) {
     return;
@@ -95,12 +78,22 @@ function initPublicationFilters() {
       const shouldShow = activeFilter === 'all' || category === activeFilter;
       item.classList.toggle('is-hidden', !shouldShow);
     });
+
+    // Hide a year heading when the filter leaves nothing under it.
+    yearGroups.forEach((group) => {
+      const hasVisible = group.querySelector('.publication-item:not(.is-hidden)') !== null;
+      group.classList.toggle('is-hidden', !hasVisible);
+    });
   }
 
   filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      filterButtons.forEach((other) => other.classList.remove('active'));
+      filterButtons.forEach((other) => {
+        other.classList.remove('active');
+        other.setAttribute('aria-pressed', 'false');
+      });
       button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
       applyFilter(button.getAttribute('data-filter'));
     });
   });
@@ -114,15 +107,8 @@ function initCitations() {
     return;
   }
 
-  // Strip the source indentation once so both the rendered block and the
-  // copied text start flush-left.
-  document.querySelectorAll('.cite-bibtex').forEach((block) => {
-    block.textContent = normalizeBibtex(block.textContent);
-  });
-
   toggles.forEach((toggle) => {
     const panel = document.getElementById(toggle.getAttribute('aria-controls'));
-    const caret = toggle.querySelector('.cite-caret');
     if (!panel) {
       return;
     }
@@ -131,11 +117,6 @@ function initCitations() {
       const expanded = panel.classList.contains('is-hidden');
       panel.classList.toggle('is-hidden', !expanded);
       toggle.setAttribute('aria-expanded', String(expanded));
-
-      if (caret) {
-        caret.classList.toggle('fa-caret-down', !expanded);
-        caret.classList.toggle('fa-caret-up', expanded);
-      }
     });
   });
 
