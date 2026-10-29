@@ -1,10 +1,20 @@
 # Shown on the home page, newest first. Keep each item to one sentence.
+- date: Oct 2026
+  text: >-
+    Posted a preprint on deep operator networks for data reduction in deterministic neutron
+    calculations (<a href="https://doi.org/10.31224/8581">engrXiv</a>).
+- date: Oct 2026
+  text: >-
+    Co-authored a preprint on self-shielded cross section generation with targeted neural networks
+    (<a href="https://arxiv.org/abs/2610.10464">arXiv:2610.10464</a>).
 - date: May 2026
   text: Started as an AI/ML Scientist at Los Alamos National Laboratory.
 - date: May 2026
   text: >-
     Posted a preprint on reinforcement learning for multigroup energy grid optimization
     (<a href="https://arxiv.org/abs/2605.27895">arXiv:2605.27895</a>).
+- date: 2026
+  text: Started reviewing for <em>Nuclear Science and Engineering</em>.
 - date: 2025
   text: Received a conference paper award at the 2025 ANS Mathematics and Computational Methods conference (M&amp;C 2025).
 - date: Feb 2025
