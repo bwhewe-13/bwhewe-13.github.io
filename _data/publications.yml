@@ -2,6 +2,41 @@
 # research.html lists all of them; resume.html lists type "journal".
 # request: true adds a "Request a copy" email link for papers with no free version.
 
+- key: whewell2026deeponet
+  type: journal
+  year: 2026
+  title: "Application of Deep Operator Networks for Data Reduction in Deterministic Neutron Calculations"
+  citation: "Ben Whewell, Ryan G. McClarren, Nathan Gibson, and Ajeeta Khatiwada, (2026). Under Review. engrXiv: <a href=\"https://doi.org/10.31224/8581\">10.31224/8581</a>"
+  summary: "Deep operator networks for learned surrogates and model compression."
+  preprint: true
+  request: false
+  bibtex: |
+    @misc{whewell2026deeponet,
+      author       = {Whewell, Ben and McClarren, Ryan G. and Gibson, Nathan and Khatiwada, Ajeeta},
+      title        = {{Application of Deep Operator Networks for Data Reduction in Deterministic Neutron Calculations}},
+      year         = {2026},
+      howpublished = {engrXiv},
+      doi          = {10.31224/8581},
+      note         = {Under review}
+    }
+
+- key: nichols2026targeted
+  type: journal
+  year: 2026
+  title: "Self-Shielded Multigroup Microscopic Cross Section Generation Using Targeted Artificial Neural Networks"
+  citation: "Joshua Nichols, Andrew Osborne, Ben Whewell, and Nathan Gibson, (2026). arXiv: <a href=\"https://arxiv.org/abs/2610.10464\">2610.10464</a>"
+  summary: "Artificial neural networks for surrogate regression modeling."
+  preprint: true
+  request: false
+  bibtex: |
+    @misc{nichols2026targeted,
+      author        = {Nichols, Joshua and Osborne, Andrew and Whewell, Ben and Gibson, Nathan},
+      title         = {{Self-Shielded Multigroup Microscopic Cross Section Generation Using Targeted Artificial Neural Networks}},
+      year          = {2026},
+      eprint        = {2610.10464},
+      archivePrefix = {arXiv}
+    }
+
 - key: whewell2026rlgrid
   type: journal
   year: 2026
